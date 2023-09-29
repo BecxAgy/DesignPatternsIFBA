@@ -1,6 +1,6 @@
-package AVDP2023.exceptions;
+package AVDP20231.singleton;
 
-import AVDP2023.exceptions.NutrienteNaoEncontradoException;
+import AVDP20231.models.Nutriente;
 
 public interface ArmazemNutrientes {
 

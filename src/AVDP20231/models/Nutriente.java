@@ -1,9 +1,14 @@
-package AVDP2023.exceptions;
+package AVDP20231.models;
 
 public  class Nutriente {
 
 
     private String nome;
+
+    public void setUnidade(String unidade) {
+        this.unidade = unidade;
+    }
+
     private String unidade;
     private double caloriaPorUnidade;
 
@@ -17,16 +22,9 @@ public  class Nutriente {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 
     public String getUnidade() {
         return unidade;
-    }
-
-    public void setUnidade(String unidade) {
-        this.unidade = unidade;
     }
 
     public double getCaloriaPorUnidade() {
