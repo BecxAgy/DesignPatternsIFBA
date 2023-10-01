@@ -1,4 +1,4 @@
-package AVDP2023.exceptions;
+package AVDP20231.singleton;
 
 public class NutrienteNaoEncontradoException extends Exception {
 }
