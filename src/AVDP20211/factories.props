@@ -1,0 +1,4 @@
+
+Acessorio = AVDP20211.factory.AcessorioFactory
+Halteres = AVDP20211.factory.HalteresFactory;
+Maquina = AVDP20211.factory.MaquinaFactory;

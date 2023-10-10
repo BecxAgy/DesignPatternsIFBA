@@ -7,7 +7,7 @@ import AVDP20211.modelos.Maquina;
 public class HalteresFactory implements EquipamentoFactory{
 
     @Override
-    public Equipamento create() {
-        return new Halter();
+    public Equipamento create(int quantidade, String identificacao) {
+        return new Halter(quantidade, identificacao);
     }
 }

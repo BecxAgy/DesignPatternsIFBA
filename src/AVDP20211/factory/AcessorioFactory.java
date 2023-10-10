@@ -5,7 +5,7 @@ import AVDP20211.modelos.Maquina;
 
 public class AcessorioFactory implements EquipamentoFactory{
     @Override
-    public Acessorio create() {
-        return new Acessorio();
+    public Acessorio create(int quantidade, String identificacao) {
+        return new Acessorio(quantidade, identificacao);
     }
 }

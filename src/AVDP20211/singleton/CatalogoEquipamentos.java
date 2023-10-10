@@ -14,21 +14,39 @@ import java.util.Map;
 public class CatalogoEquipamentos {
     private Map<String, Equipamento> equipamentos;
     private Map<String, EquipamentoFactory> factories;
+    private Map<String, String> configuracao;
 
-    private static CatalogoEquipamentos catalogo = null;
+    private static CatalogoEquipamentos instance = null;
 
-    private CatalogoEquipamentos(){
-        factories.put("AcessorioFactory", new AcessorioFactory());
-        factories.put("MaquinaFactory", new MaquinaFactory());
-        factories.put("HalterFactory", new HalteresFactory());
+    private CatalogoEquipamentos( ){
+        factories.put("Acessorio", new AcessorioFactory());
+        factories.put("Maquina", new MaquinaFactory());
+        factories.put("Halter", new HalteresFactory());
     }
     public static CatalogoEquipamentos getInstance(){
-        if(catalogo == null) return new CatalogoEquipamentos();
+        if(instance == null) return new CatalogoEquipamentos();
 
-        return catalogo;
+        return instance;
     }
-    public Equipamento criarOuRecuperarEquipamento(String tipo, String identificador, int quantidade) {
-        return null;
+    public Equipamento criarEquipamento(String tipo, String identificacao, int quantidade) {
+        if (equipamentos.containsKey(identificacao)) {
+            Equipamento equipamentoExistente = equipamentos.get(identificacao);
+            equipamentoExistente.adicionarQuantidade(quantidade);
+            return equipamentoExistente;
+        } else {
+            EquipamentoFactory factory = factories.get(tipo);
+            if (factory != null) {
+                try {
+                    Equipamento novoEquipamento = factory.create( quantidade, identificacao);
+                    return novoEquipamento;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    throw new IllegalArgumentException("Tipo de equipamento não suportado");
+                }
+            } else {
+                throw new IllegalArgumentException("Tipo de equipamento não encontrado na fábrica");
+            }
+        }
     }
 
 

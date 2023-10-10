@@ -4,5 +4,5 @@ import AVDP20211.modelos.Equipamento;
 import AVDP20211.modelos.Maquina;
 
 public interface EquipamentoFactory {
-    public Equipamento create();
+    public Equipamento create(int quantidade, String identificacao);
 }

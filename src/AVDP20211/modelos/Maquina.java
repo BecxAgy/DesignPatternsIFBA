@@ -4,6 +4,10 @@ public class Maquina extends Equipamento{
     private String descricao;
     private String marca;
 
+    public Maquina(int quantidade, String identificacao) {
+        super(quantidade, identificacao);
+    }
+
     public String getMarca() {
         return marca;
     }

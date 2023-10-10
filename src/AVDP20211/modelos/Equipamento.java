@@ -3,7 +3,10 @@ package AVDP20211.modelos;
 public abstract class Equipamento {
     private String identifcador;
     private  int quantidade;
-
+    public Equipamento(int quantidade, String identificacao) {
+        this.quantidade = quantidade;
+        this.identifcador = identificacao;
+    }
     public String getIdentifcador() {
         return identifcador;
     }
@@ -21,6 +24,6 @@ public abstract class Equipamento {
     }
 
     public void adicionarQuantidade(int quantidade){
-        this.quantidade ++;
+        this.quantidade += quantidade;
     }
 }
